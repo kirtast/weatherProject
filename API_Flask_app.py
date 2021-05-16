@@ -25,9 +25,9 @@ def main_page():
 
     data_loc = app_test.create_home_loc()
     if data_loc['location'] == '6999':
-        loc_str = 'Rubí'
+        loc_str = 'Rubí (Barcelona)'
     else:
-        loc_str = 'No Rubí'
+        loc_str = 'No Rubí (Barcelona)'
     return render_template('home.html', daily = daily, hours = hours, info = info, now = now, loc = data_loc['location'], loc_str = loc_str)
 
 if __name__ == '__main__':

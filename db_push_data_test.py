@@ -162,8 +162,8 @@ def DB_initialize():
     #===============================================================================
     #=================== APARTADO DE InfoMeasuresHour ==============================
     #===============================================================================
-    str='CREATE TABLE InfoMeasuresHour(id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT UNIQUE,MeasureName TEXT UNIQUE, IndexMeasure INTEGER)'
-    cur.execute(str)
+    # str='CREATE TABLE InfoMeasuresHour(id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT UNIQUE,MeasureName TEXT UNIQUE, IndexMeasure INTEGER)'
+    # cur.execute(str)
 
     conn.commit()
     cur.close()
