@@ -168,17 +168,17 @@ def DB_initialize():
     conn.commit()
     cur.close()
 
-def DB_backups():
-    user = os.getlogin()
-    if user == 'Usuario' and os.path.isdir('C:/Users/Usuario/github/weather/'):
-        now = datetime.datetime.now()
-        src = 'C:/Users/Usuario/github/weather/DB_weather.sqlite'
-        dst = 'C:/Users/Usuario/github/backup/DB_weather_' + (now.strftime("%Y%m%d%H%M%S")) + '.sqlite'
-        copyfile(src, dst)
+# def DB_backups():
+#     user = os.getlogin()
+#     if user == 'Usuario' and os.path.isdir('C:/Users/Usuario/github/weather/'):
+#         now = datetime.datetime.now()
+#         src = 'C:/Users/Usuario/github/weather/DB_weather.sqlite'
+#         dst = 'C:/Users/Usuario/github/backup/DB_weather_' + (now.strftime("%Y%m%d%H%M%S")) + '.sqlite'
+#         copyfile(src, dst)
 
 
 if __name__ == '__main__':
-    DB_backups()
+    # DB_backups()
     DB_initialize()
     DB_insert_hour_data()
     DB_insert_daily_data()

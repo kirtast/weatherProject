@@ -7,9 +7,9 @@
     <title>Weather</title>
   </head>
   <body>
-        <h1>HOME PAGE UPDATED: {{now}}</h1>
+        <h1>HOME PAGE UPDATED: {{now}} -- LOCATION: {{loc}} = {{loc_str}}</h1>
 
-        <div class="daily_table col-md-12 col-lg-7">
+        <div class="daily_table col-md-12 col-lg-8">
           <h2>DATA DAILY</h2>
           <span>
             <table border = 1>
@@ -72,7 +72,7 @@
 
         </div>
 
-        <div class="hours_table col-md-12 col-lg-7">
+        <div class="hours_table col-md-12 col-lg-8">
         <h2>DATA PER HOUR</h2>
         <table border = 1>
            <thead>
@@ -106,7 +106,15 @@
            {% endfor %}
         </table>
         </div>
+<div class="Footer_info col-md-12 col-lg-8">
+  <footer>
+    <h1>For more info:</h1>
+    <ul>
+      <li> <a href="https://api.tutiempo.net/list/">API INFO LOCATIONS</a></li>
+    </ul>
 
+  </footer>
+</div>
 
 
 

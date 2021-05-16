@@ -22,7 +22,13 @@ def main_page():
     cur.close()
     now_raw = datetime.datetime.now()
     now = now_raw.strftime("%Y-%m-%d-%H:%M:%S")
-    return render_template('home.html', daily = daily, hours = hours, info = info, now = now)
+
+    data_loc = app_test.create_home_loc()
+    if data_loc['location'] == '6999':
+        loc_str = 'Rubí'
+    else:
+        loc_str = 'No Rubí'
+    return render_template('home.html', daily = daily, hours = hours, info = info, now = now, loc = data_loc['location'], loc_str = loc_str)
 
 if __name__ == '__main__':
     #app.run(host = "0.0.0.0", port = 5000, debug = True, use_reloader = True)
