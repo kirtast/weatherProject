@@ -2,7 +2,7 @@ from flask import Flask, render_template
 import sqlite3
 import app_test
 import db_push_data_test
-
+import datetime
 app = Flask(__name__)
 # app.config['SQLACHEMY_DATABASE_URI'] = 'sqlite:///DB_weather.sqlite'
 # db = SQLAlchemy(app)
@@ -17,8 +17,12 @@ def main_page():
     daily = cur.fetchall()
     cur.execute('SELECT * FROM Hour_Data')
     hours = cur.fetchall()
+    cur.execute('SELECT * FROM InfoMeasures')
+    info = cur.fetchall()
     cur.close()
-    return render_template('home.html', daily = daily, hours = hours)
+    now_raw = datetime.datetime.now()
+    now = now_raw.strftime("%Y-%m-%d-%H:%M:%S")
+    return render_template('home.html', daily = daily, hours = hours, info = info, now = now)
 
 if __name__ == '__main__':
     #app.run(host = "0.0.0.0", port = 5000, debug = True, use_reloader = True)

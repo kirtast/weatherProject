@@ -2,52 +2,78 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
     <title>Weather</title>
   </head>
   <body>
-        <h1>HOME PAGE UPDATED</h1>
-        <h2>DATA DAILY</h2>
-        <div class="daily_table">
-        <table border = 1>
-           <thead>
-              <td>id</td>
-              <td>date</td>
-              <td>temperature_max</td>
-              <td>temperature_min</td>
-              <td>icon</td>
-              <td>humidity</td>
-              <td>wind</td>
-              <td>wind_direction</td>
-              <td>icon_wind</td>
-              <td>sunrise</td>
-              <td>sunset</td>
-              <td>moonrise</td>
-              <td>moonset</td>
-              <td>moon_phases_icon</td>
-           </thead>
+        <h1>HOME PAGE UPDATED: {{now}}</h1>
 
-           {% for row in daily %}
-              <tr>
-                 <td>{{row[0]}}</td>
-                 <td>{{row[1]}}</td>
-                 <td> {{row[2]}}</td>
-                 <td>{{row[3]}}</td>
-                 <td>{{row[4]}}</td>
-                 <td>{{row[5]}}</td>
-                 <td>{{row[6]}}</td>
-                 <td>{{row[7]}}</td>
-                 <td>{{row[8]}}</td>
-                 <td>{{row[9]}}</td>
-                 <td>{{row[10]}}</td>
-                 <td>{{row[11]}}</td>
-                 <td>{{row[12]}}</td>
-                 <td>{{row[13]}}</td>
-              </tr>
-           {% endfor %}
-        </table>
+        <div class="daily_table col-md-12 col-lg-7">
+          <h2>DATA DAILY</h2>
+          <span>
+            <table border = 1>
+               <thead>
+                  <td>id</td>
+                  <td>date</td>
+                  <td>temperature_max</td>
+                  <td>temperature_min</td>
+                  <td>icon</td>
+                  <td>humidity</td>
+                  <td>wind</td>
+                  <td>wind_direction</td>
+                  <td>icon_wind</td>
+                  <td>sunrise</td>
+                  <td>sunset</td>
+                  <td>moonrise</td>
+                  <td>moonset</td>
+                  <td>moon_phases_icon</td>
+               </thead>
+
+               {% for row in daily %}
+                  <tr>
+                     <td>{{row[0]}}</td>
+                     <td>{{row[1]}}</td>
+                     <td> {{row[2]}}</td>
+                     <td>{{row[3]}}</td>
+                     <td>{{row[4]}}</td>
+                     <td>{{row[5]}}</td>
+                     <td>{{row[6]}}</td>
+                     <td>{{row[7]}}</td>
+                     <td>{{row[8]}}</td>
+                     <td>{{row[9]}}</td>
+                     <td>{{row[10]}}</td>
+                     <td>{{row[11]}}</td>
+                     <td>{{row[12]}}</td>
+                     <td>{{row[13]}}</td>
+                  </tr>
+               {% endfor %}
+            </table>
+          </span>
+
+        <span>
+          <h2>INFO TABLE</h2>
+          <table border = 1>
+             <thead>
+                <td>id</td>
+                <td>Measure</td>
+                <td>Unit</td>
+             </thead>
+
+             {% for row in info %}
+                <tr>
+                   <td>{{row[0]}}</td>
+                   <td>{{row[1]}}</td>
+                   <td> {{row[2]}}</td>
+                </tr>
+             {% endfor %}
+          </table>
+        </span>
+
         </div>
+
+        <div class="hours_table col-md-12 col-lg-7">
         <h2>DATA PER HOUR</h2>
-        <div class="hours_table">
         <table border = 1>
            <thead>
               <td>id</td>
