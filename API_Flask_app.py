@@ -11,6 +11,10 @@ app = Flask(__name__)
 @app.route("/")
 def main_page():
 
+    db_push_data_test.DB_initialize()
+    db_push_data_test.DB_insert_hour_data()
+    db_push_data_test.DB_insert_daily_data()
+    
     conn=sqlite3.connect('DB_weather.sqlite')
     cur=conn.cursor()
     cur.execute('SELECT * FROM Daily')
